@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+</head>
+<style>
+    body{
+        background-color: aliceblue;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .cart{
+        background-color: orangered;
+    }
+</style>
+<body>
+    <div class="cart">
+        <ul id="cart-items">
+        </ul>
+    </div>
+    <div id="items">
+        <h2>Availabel Items:</h2>
+        <ul id="items-list">
+            <li>Item 1 <button onclick="addItem('Item 1')">Add to Cart</button></li>
+            <li>Item 2 <button onclick="addItem('Item 2')">Add to Cart</button></li>
+            <li>Item 3 <button onclick="addItem('Item 3')">Add to Cart</button></li>
+        </ul>
+    </div>
+    
+    <script>
+        function addItem(itemName) {
+            var cartItems = document.getElementById('cart-items');
+            var newItem = document.createElement('li');
+            newItem.textContent = itemName;
+            cartItems.appendChild(newItem);
+        }
+    </script>
+    
+</body>
+</html>

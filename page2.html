@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page 2</title>
+</head>
+<body>
+    <h2>Page 2: Review your details</h2>
+    <div id="formDataDisplay"></div>
+
+    <script>
+        // Retrieve saved data from localStorage
+        var savedData = localStorage.getItem("formData");
+        if (savedData) {
+            // Parse JSON string to object
+            var formData = JSON.parse(savedData);
+
+            //Display from data
+            var displayDiv = document.getElementById("formDataDisplay");
+            displayDiv.innerHTML = `
+            <p><strong>Name:</strong> ${formData.name}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Password:</strong> ${formData.password}</p>
+            <p><strong>Contact:</strong> ${formData.contact}</p>
+            <p><strong>Address:</strong> ${formData.address}</p>
+            `;
+
+        } else {
+            // If no data found,display error message
+            document.getElementById("formDataDisplay").innerText = "No data found!";
+        }
+    </script>
+    
+</body>
+</html>

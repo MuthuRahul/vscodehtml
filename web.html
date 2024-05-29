@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Mood | webpage</title>
+    <link rel="Stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" /> 
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <nav class="nav">
+    <i class="uil uil-bars navOpenBtn"></i>
+    <div class="image2">
+      <img src="F:\vscodehtml\image2.png" width="60px">
+    </div>
+    
+    <ul class="nav-links">
+      <i class="uil uil-times navCloseBtn"></i>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="form.html">Sign Up</a></li>
+    </ul>
+    
+    <div class="profile">
+      <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+    </div>
+    
+    <i class="uil uil-search search-icon" id="searchIcon"></i>
+    <div class="search-box">
+      <button onclick="searchFood()" i class="uil uil-search search-icon"></button>
+      <input type="text" placeholder="Search here..." />
+      <div id="results"></div>
+    </div>
+    <script>
+      const foodlist = [
+        { name: "Idle", image: "F:\vscodehtml\vs pictures\f1.webp" },
+        { name: "Dosa", image: "F:\vscodehtml\vs pictures\f2.jpg" },
+        { name: "Poori", image: "F:\vscodehtml\vs pictures\f3.avif" },
+      ];
+      function searchFood() {
+        const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+        const resultsContainer = document.getElementById("results");
+        resultsContainer.innerHTML = "";
+
+        const filteredResults  = foodList.filter(food => food.name.toLowerCase().includes(searchTerm));
+        if (filteredResults.length === 0) {
+          resultsContainer.innerHTML = "No results found";
+        } else {
+          const resultList = document.createElement("ul");
+          filteredResults.forEach(food => {
+            const listItem = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = food.image;
+            const span = document.createElement("span");
+            span.textContent = food.name;
+            listItem.appendChild(img);
+            listItem.appendChild(span);
+            resultList.appendChild(listItem);
+          });
+          resultsContainer.appendChild(resultList);
+        }
+      }
+    </script>
+  </nav>
+  
+  <section class="home" id="home">
+    <div class="home-slider">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <span>FOOD MOOD</span>
+                  <h1>OMG! Fastest Delivery App</h1>
+                  <p>Your Favorite Restaurant and tasty Food</p>
+                  <a href="#" class="btn"></a>
+                </div>
+                <div class="image">
+                  <img src="F:\vscodehtml\vs pictures\a3.jpg" alt="">
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="content">
+                  <span>FOOD MOOD</span>
+                  <h1>OMG! Fastest Delivery App</h1>
+                  <p>Your Favorite Restaurant and tasty Food</p>
+                  <a href="#" class="btn"></a>
+                </div>
+                <div class="image">
+                  <img src="F:\vscodehtml\vs pictures\a12.jpg" alt="">
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="content">
+                  <span>FOOD MOOD</span>
+                  <h1>OMG! Fastest Delivery App</h1>
+                  <p>Your Favorite Restaurant and tasty Food</p>
+                  <a href="#" class="btn"></a>
+                </div>
+                <div class="image">
+                  <img src="F:\vscodehtml\vs pictures\sty9.jpg" alt="">
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="content">
+                  <span>FOOD MOOD</span>
+                  <h1>OMG! Fastest Delivery App</h1>
+                  <p>Your Favorite Restaurant and tasty Food</p>
+                  <a href="#" class="btn"></a>
+                </div>
+                <div class="image">
+                  <img src="F:\vscodehtml\vs pictures\a2.0.jpg" alt="">
+                </div>
+                </div>
+            
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+    </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+    </script>
+    <div class="card">
+    <div class="card1">
+      <img src="F:\vscodehtml\vs pictures\wal1.jpg">
+      <p>Get the fastest food delivery with us.</p>
+    </div>
+      <div class="card2">
+        <img src="F:\vscodehtml\vs pictures\wal2.png">
+        <p>You select,we deliver-fast,fresh and instant food.</p>
+      </div>      
+      <div class="card3">
+        <img src="F:\vscodehtml\vs pictures\wal3.jpg">
+        <p>The best delivery guys at your services.</p>
+      </div>
+    </div>
+
+    <section  id="tranding">
+      <div class="container">
+        <h3 class="text-center section-subheading">-You select-</h3>
+        <h1 class="text-center section-heading">-Your's Favorite Food-</h1>
+      </div>
+      <div class="container">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main1.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Special Pizza
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main2.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Special Burger
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main3.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Special Pasta
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main4.avif" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Special Sandwich
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main5.webp" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Special kebab
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main6.png" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Special Noodles
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main7.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                     Milkshake
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main8.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Muffin
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main9.png" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Fried chicken
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main10.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Chips(uk)
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main11.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Sweet cake
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+            <!------ slide start------>
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="F:\vscodehtml\vs pictures\main12.png" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Fried rice
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!------slide end------>
+          </div>
+
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        
+        </div>
+      </div>
+    </section>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <!----------Dishes Section---------->
+    
+    <section class="dishes" id="dishes">
+
+
+    <h3 class="heading">--You are Hungry!--</h3>
+
+    <div class="box-container">
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f1.webp" alt="" width="250" height="250">
+        <h3>Idle</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$10</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Idle')">-</button>
+          <span id="idle-quantity">0</span>
+          <button onclick="incrementQuantity('Idle')">+</button>
+        </div>
+        <button onclick="addToCart('Idle')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f2.jpg" alt="" width="250" height="250">
+        <h3>Dosa</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$15</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Dosa')">-</button>
+          <span id="dosa-quantity">0</span>
+          <button onclick="incrementQuantity('Dosa')">+</button>
+        </div>
+        <button onclick="addToCart('Dosa')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f3.avif" alt="" width="250" height="250">
+        <h3>Poori</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$10</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Poori')">-</button>
+          <span id="poori-quantity">0</span>
+          <button onclick="incrementQuantity('Poori')">+</button>
+        </div>
+        <button onclick="addToCart('Poori')">Add to Cart</button>
+      </div>
+        
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f4.jpg" alt="" width="250" height="250">
+        <h3>Pongal</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$30</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Pongal')">-</button>
+          <span id="pongal-quantity">0</span>
+          <button onclick="incrementQuantity('Pongal')">+</button>
+        </div>
+        <button onclick="addToCart('Pongal')">Add to Cart</button>
+      </div>
+        
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f5.avif" alt="" width="250" height="250">
+        <h3>Sapati</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$10</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Sapati')">-</button>
+          <span id="sapati-quantity">0</span>
+          <button onclick="incrementQuantity('Sapati')">+</button>
+        </div>
+        <button onclick="addToCart('Sapati')">Add to Cart</button>
+      </div>
+        
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f20.jpg" alt="" width="250" height="250">
+        <h3>Special Dosa</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$30</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('SpecialDosa')">-</button>
+          <span id="specialdosa-quantity">0</span>
+          <button onclick="incrementQuantity('SpecialDosa')">+</button>
+        </div>
+        <button onclick="addToCart('SpecialDosa')">Add to Cart</button>
+      </div>
+        
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f19.jpg" alt="" width="250" height="250">
+        <h3>Vadai</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$10</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Vadai')">-</button>
+          <span id="vadai-quantity">0</span>
+          <button onclick="incrementQuantity('Vadai')">+</button>
+        </div>
+        <button onclick="addToCart('Vadai')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f6.jpg" alt="" width="250" height="250">
+        <h3>Sambar Sadam</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$35</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('SambarSadam')">-</button>
+          <span id="sambarsadam-quantity">0</span>
+          <button onclick="incrementQuantity('SambarSadam')">+</button>
+        </div>
+        <button onclick="addToCart('SambarSadam')">Add to Cart</button>
+      </div>
+        
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f18.jpg." alt="" width="250" height="250">
+        <h3>Lemon Rice</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$35</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('LemonRice')">-</button>
+          <span id="lemonrice-quantity">0</span>
+          <button onclick="incrementQuantity('LemonRice')">+</button>
+        </div>
+        <button onclick="addToCart('LemonRice')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f7.webp" alt="" width="250" height="250">
+        <h3>Tomato Rice</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$35</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('TomatoRice')">-</button>
+          <span id="tomatorice-quantity">0</span>
+          <button onclick="incrementQuantity('TomatoRice')">+</button>
+        </div>
+        <button onclick="addToCart('TomatoRice')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f8.webp" alt="" width="250" height="250">
+        <h3>Curd Rice</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$30</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('CurdRice')">-</button>
+          <span id="curdrice-quantity">0</span>
+          <button onclick="incrementQuantity('CurdRice')">+</button>
+        </div>
+        <button onclick="addToCart('CurdRice')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f9.webp" alt="" width="250" height="250">
+        <h3>Veg Briyani</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$70</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('VegBriyani')">-</button>
+          <span id="vegbriyani-quantity">0</span>
+          <button onclick="incrementQuantity('VegBriyani')">+</button>
+        </div>
+        <button onclick="addToCart('VegBriyani')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f10.jpg" alt="" width="250" height="250">
+        <h3>Chicken Briyani</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$100</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('ChickenBriyani')">-</button>
+          <span id="chickenbriyani-quantity">0</span>
+          <button onclick="incrementQuantity('ChickenBriyani')">+</button>
+        </div>
+        <button onclick="addToCart('ChickenBriyani')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f11.jpg" alt="" width="250" height="250">
+        <h3>Mutton Briyani</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$120</p>
+          <div class="Quantity">
+          <button onclick="decrementQuantity('MuttonBriyani')">-</button>
+          <span id="muttonbriyani-quantity">0</span>
+          <button onclick="incrementQuantity('MuttonBriyani')">+</button>
+        </div>
+        <button onclick="addToCart('MuttonBriyani')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f15.jpg" alt="" width="250" height="250">
+        <h3>Egg Rice</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$80</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('EggRice')">-</button>
+          <span id="eggrice-quantity">0</span>
+          <button onclick="incrementQuantity('EggRice')">+</button>
+        </div>
+        <button onclick="addToCart('EggRice')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f12.jpg" alt="" width="250" height="250">
+        <h3>Parotta</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$15</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Parotta')">-</button>
+          <span id="parotta-quantity">0</span>
+          <button onclick="incrementQuantity('Parotta')">+</button>
+        </div>
+        <button onclick="addToCart('Parotta')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f17.jpg" alt="" width="250" height="250">
+        <h3>Egg Omplate</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$10</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('EggOmplate')">-</button>
+          <span id="eggomplate-quantity">0</span>
+          <button onclick="incrementQuantity('EggOmplate')">+</button>
+        </div>
+        <button onclick="addToCart('EggOmplate')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f14.jpg" alt="" width="250" height="250">
+        <h3>Kothu Parotta</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$30</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('KothuParotta')">-</button>
+          <span id="kothuparotta-quantity">0</span>
+          <button onclick="incrementQuantity('KothuParotta')">+</button>
+        </div>
+        <button onclick="addToCart('KothuParotta')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f13.jpg" alt="" width="250" height="250">
+        <h3>Grill</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$50</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Grill')">-</button>
+          <span id="grill-quantity">0</span>
+          <button onclick="incrementQuantity('Grill')">+</button>
+        </div>
+        <button onclick="addToCart('Grill')">Add to Cart</button>
+      </div>
+
+      <div class="food-item">
+        <a href="#" class="fa fa-heart"></a>
+        <a href="#" class="fa fa-eye"></a>
+        <img src="F:\vscodehtml\vs pictures\f16.avif" alt="" width="250" height="250">
+        <h3>Shawarma</h3>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>$75</p>
+        <div class="Quantity">
+          <button onclick="decrementQuantity('Shawarma')">-</button>
+          <span id="shawarma-quantity">0</span>
+          <button onclick="incrementQuantity('Shawarma')">+</button>
+        </div>
+        <button onclick="addToCart('Shawarma')">Add to Cart</button>
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Shopping Cart</h2>
+          <ul id="cart-items"></ul>
+          <p>TOTAL AMOUNT: <span id="total-amount">$0.00</span></p>
+          <button onclick="orderNow()">Order Now</button>
+          <button onclick="clearCart()">Clear Cart</button>
+          </div>
+        </div>
+    </div>
+    <script>
+
+       function addToCart(itemName) {
+        var quantitySpan = document.getElementById(itemName.toLowerCase() + '-quantity');
+        var quantity = parseInt(quantitySpan.textContent);
+        quantity++;
+        quantitySpan.textContent = quantity;
+       }
+
+       function incrementQuantity(itemName) {
+        var quantitySpan = document.getElementById(itemName.toLowerCase() + '-quantity');
+        var quantity = parseInt(quantitySpan.textContent);
+        quantity++;
+        quantitySpan.textContent = quantity;
+       }
+
+       function decrementQuantity(itemName) {
+        var quantitySpan = document.getElementById(itemName.toLowerCase() + '-quantity');
+        var quantity = parseInt(quantitySpan.textContent);
+        if (quantity > 0){
+          quantity--;
+          quantitySpan.textContent = quantity;
+        }
+       }
+
+       function displayModal(){
+          var modal = document.getElementById("myModal");
+          modal.style.display = "block";
+
+          var modalContent = document.getElementById("cart-items");
+          modalContent.innerHTML = '';
+          var totalAmount = 0;
+          var foodItems = document.querySelectorAll('.food-item');
+          foodItems.forEach(function(item) {
+            var itemName = item.querySelector('h3').textContent.split(':')[0].trim();
+            var quantity = parseInt(item.querySelector('span').textContent);
+            if (quantity > 0){
+              var listItem = document.createElement('li');
+              var price = parseFloat(item.querySelector('p').textContent.split('$')[1]);
+              var itemTotal = price * quantity;
+              listItem.textContent = `${itemName}: x${quantity} - $${itemTotal.toFixed(2)}`;
+              modalContent.appendChild(listItem);
+              totalAmount += itemTotal;
+            }
+          });
+          document.getElementById('total-amount').textContent = '$' + totalAmount.toFixed(2);
+        }
+        
+        function closeModal(){
+          var modal = document.getElementById("myModal");
+          modal.style.display = "none";
+        }
+
+        function clearCart(){
+          var foodItems = document.querySelectorAll('.food-item');
+          foodItems.forEach(function(item) {
+            var quantitySpan = item.querySelector('span');
+            quantitySpan.textContent = '0';
+          });
+          closeModal();
+        }
+        
+        function orderNow() {
+          alert('Your order has been placed successfully!');
+          window.location.href = "order.html";
+        }
+        </script>
+
+        <button onclick="displayModal()">Open Cart</button>
+      </section>
+
+  <!----------Order Section---------->
+  <section class="order" id="order">
+
+    <h3 class="sub-heading">---FOOD MOOD---</h3>
+    <h1 class="heading">--Order Now--</h1>
+
+    <form action="">
+
+      <div class="inputBox">
+        <div class="input">
+          <span>Your Name</span>
+          <input type="text" placeholder="Enter your Name">
+          </div>
+          <div class="input">
+            <span>Your Number</span>
+            <input type="number" placeholder="Enter Your Number">
+          </div>
+        </div>
+        <div class="inputBox">
+          <div class="input">
+            <span>Your Order</span>
+            <input type="text" placeholder="Enter Food Name">
+            </div>
+            <div class="input">
+              <span>Additional Food</span>
+              <input type="text" placeholder="Extra with Food">
+            </div>
+        </div>
+        <div class="inputBox">
+          <div class="input">
+            <span>How Much</span>
+            <input type="number" placeholder="How many Orders">
+          </div>
+          <div class="input">
+            <span>Date and Time</span>
+            <input type="datetime-local">
+          </div>
+        </div>
+        <div class="inputBox">
+          <div class="input">
+            <span>Your Address</span>
+            <textarea name="" placeholder="Enter your Address" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div class="input">
+            <span>Your Message</span>
+            <textarea name="" placeholder="Enter your Message" id="" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        
+        <input type="submit" value="order now" class="btn">
+      </form>
+    </section>
+
+    <!----------Footer Section---------->
+    <section class="footer">
+
+      <div class="box-container">
+        <div class="box">
+          <h3>Locations</h3>
+          <a href="#">india</a>
+          <a href="#">japan</a>
+          <a href="#">russia</a>
+          <a href="#">america</a>
+          <a href="#">france</a>
+        </div>
+        <div class="box">
+          <h3>Quick Links</h3>
+          <a href="#">home</a>
+          <a href="#">dishes</a>
+          <a href="#">about</a>
+          <a href="#">menu</a>
+          <a href="#">order</a>
+        </div>
+        <div class="box">
+          <h3>Contact Info</h3>
+          <a href="#">9080874207</a>
+          <a href="#">8883793651</a>
+          <a href="#">rahulpitchiah@gmail.com</a>
+          <a href="#">mr.omg@gmail.com</a>
+          <a href="#">chennai,india-627410</a>
+        </div>
+        <div class="box">
+          <h3>Follow Us</h3>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">Whatsapp</a>
+          <a href="#">Linkedin</a>
+        </div>
+
+      </div>
+      <div class="credit">copyright @ 2023 by <span>mr.rahul(web designer)</span></div>
+    </section>
+
+</body>
+</html>
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+        background-color: #344a72;
+        font-family: 'Roboto',sans-serif;
+    }
+    .login-box{
+        width: 360px;
+        height: 280px;
+        margin: auto;
+        border-radius: 6px;
+        background-color: white;
+    }
+    h1{
+        text-align: center;
+        padding-top: 15px;
+    }
+    form{
+        width: 300px;
+        margin-left: 20px;
+    }
+    form label{
+        display: flex;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    form input{
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border: 1px solid gray;
+        border-radius: 6px;
+        outline: none;
+    }
+    button[type="submit"]{
+        width: 320px;
+        height: 35px;
+        margin-top: 20px;
+        border: none;
+        background-color: black;
+        color: wheat;
+        font-size: 18px;
+    }
+    p{
+        text-align: center;
+        padding-top: 20px;
+        font-size: 15px;
+    }
+    .para-2{
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        margin-top: -10px;
+    }
+    .para-2 a{
+        color: #49c1a2;
+    }
+    </style>
+    </head>
+<body>
+    <div class="login-box">
+    <h1>Login</h1>
+    <form id="signupForm" onsubmit="saveFormData(event)">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<p class="para-2">Not have an account? <a href="form.html">Sign Up here</a></p>
+
+<script>
+    function saveFormData(event) {
+        event.preventDefault();
+        
+        var formData = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        };
+        // Save data to localStorage
+        localStorage.setItem("formData", JSON.stringify(formData));
+        // Success message
+        alert('Login sucessfully!');
+        // Redirect to page 2
+        window.location.href = "web.html";
+    }
+</script>
+</body>
+</html>
