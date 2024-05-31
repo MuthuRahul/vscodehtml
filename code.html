@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Mood | webpage</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            background-color: #344a72;
+        }
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #qrcode {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qr-container">
+        <h1>Scan to Pay</h1>
+        <div id="qrcode"></div>
+    </div>
+    <script>
+        const upiId = 'yourUPIID@upi    ';
+        const name = 'YourName';
+        const amount = '50.00';
+        const upiUrl = 'upi://pay?pa=${upiId}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR';
+        const qrcode = new QRCode(document.getElementById('qrcode'), {
+            text: upiUrl,
+            width: 200,
+            height: 200,
+        });
+    </script>
+    
+</body>
+</html>

@@ -4,9 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Mood | webpage</title>
+    <style>
+        body {
+            font-family: 'Roboto',sans-serif;
+            background-color: #344a72;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: wheat;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+            input, button {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Order Now</h1>
+    <div class="container">
+        <h1>UPI Payment</h1>
+        <form id="upiForm" onsubmit="event.preventDefault(); makePayment();">
+            <div class="error" id="error-message"></div>
+            <label for="vpa">UPI ID</label>
+            <input type="text" id="vpa" name="vpa" required>
+            <label for="name">Payee Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <label for="note">Note:</label>
+            <input type="text" id="note" name="note">
+        </form>
+        <button onclick="orderNow()">Pay now</button>
+        <p>Or</p>
+        <button><a href="code.html">Scanning QRCode</a></button>
+    </div>
+    <script>
+        function validate(upi) {
+            const upiPattern = /^[\w.-]+@[\w.-]+$/;
+            return upiPattern.test(upi);
+        }
+        function makePayment() {
+            const vpa = document.getElementById('vpa').value;
+            const name = document.getElementById('name').value;
+            const amount = document.getElementById('amount').value;
+            const note = document.getElementById('note').value;
+            const errorElement = document.getElementById('error-message').value;
+
+            if (!vpa || !name || !amount) {
+                errorElement.textContent = 'Please fill in all required fields.';
+                return;
+            }
+            if (!validateUPI(vpa)) {
+                errorElement.textContent = 'Please enter a valid UPI ID.';
+                return;
+            }
+            errorElement.textContent = '';
+            const upiUrl = 'upi://pay?pa=${vpa}&pn=${name}&am=${amount}&cu=INR&tn=${note}';
+            window.location.href = upiUrl;
+            
+            function orderNow() {
+                alert('Payment successful! Thank you.');
+                window.location.href = "web.html";
+            }
+        }
+    </script>
     
 </body>
 </html>

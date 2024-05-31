@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="F:\vscodehtml\vs pictures\image2.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Mood | webpage</title>
@@ -12,12 +13,29 @@
     <link rel="stylesheet" href="style.css">
     <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      #logo-container {
+        background-color: orangered;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #main-content {
+        display: none;
+      }
+    </style>
 </head>
 <body>
+  <div id="logo-container">
+    <img src="F:\vscodehtml\vs pictures\image2.png" alt="" id="logo" width="330px" height="400px">
+  </div>
+  <div id="main-content">
+
   <nav class="nav">
     <i class="uil uil-bars navOpenBtn"></i>
     <div class="image2">
-      <img src="F:\vscodehtml\image2.png" width="60px">
+      <img src="F:\vscodehtml\vs pictures\image2.png" width="60px">
     </div>
     
     <ul class="nav-links">
@@ -1083,6 +1101,17 @@
       </div>
       <div class="credit">copyright @ 2023 by <span>mr.rahul(web designer)</span></div>
     </section>
+
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('logo-container').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 2000);
+    });
+  </script>
 
 </body>
 </html>
